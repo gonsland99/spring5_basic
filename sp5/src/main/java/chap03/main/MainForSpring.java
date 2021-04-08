@@ -59,8 +59,10 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
+		//객체조립
 		MemberRegisterService regSvc = 
 				ctx.getBean("memberRegSvc", MemberRegisterService.class);
+		//getBean(bean인자, bean의 타입)
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);
@@ -84,6 +86,7 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
+		//객체조립
 		ChangePasswordService changePwdSvc = 
 				ctx.getBean("changePwdSvc", ChangePasswordService.class);
 		try {
@@ -106,6 +109,7 @@ public class MainForSpring {
 	}
 
 	private static void processListCommand() {
+		//객체조립
 		MemberListPrinter listPrinter = 
 				ctx.getBean("listPrinter", MemberListPrinter.class);
 		listPrinter.printAll();
@@ -116,12 +120,14 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
+		//객체조립
 		MemberInfoPrinter infoPrinter = 
 				ctx.getBean("infoPrinter", MemberInfoPrinter.class);
 		infoPrinter.printMemberInfo(arg[1]);
 	}
 	
 	private static void processVersionCommand() {
+		//객체조립
 		VersionPrinter versionPrinter = 
 				ctx.getBean("versionPrinter", VersionPrinter.class);
 		versionPrinter.print();

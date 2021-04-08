@@ -7,7 +7,7 @@ import java.util.Map;
 public class MemberDao {
 
 	private static long nextId = 0;
-
+	//Map: 키와 값을 이용한 데이터 저장
 	private Map<String, Member> map = new HashMap<>();
 
 	public Member selectByEmail(String email) {

@@ -14,11 +14,10 @@ public class MemberInfoPrinter {
 		printer.print(member);
 		System.out.println();
 	}
-
+	//세터 메서드
 	public void setMemberDao(MemberDao memberDao) {
 		this.memDao = memberDao;
 	}
-
 	public void setPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}

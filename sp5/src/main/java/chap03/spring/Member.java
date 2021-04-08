@@ -41,10 +41,11 @@ public class Member {
 	public LocalDateTime getRegisterDateTime() {
 		return registerDateTime;
 	}
-
+	
+	//비밀번호 변경
 	public void changePassword(String oldPassword, String newPassword) {
 		if (!password.equals(oldPassword))
-			throw new WrongIdPasswordException();
+			throw new WrongIdPasswordException();	//기존 비밀번호 불일치 시 예외처리
 		this.password = newPassword;
 	}
 

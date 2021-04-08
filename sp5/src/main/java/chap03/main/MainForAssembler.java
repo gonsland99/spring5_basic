@@ -20,18 +20,18 @@ public class MainForAssembler {
 		while (true) {
 			System.out.println("명령어를 입력하세요:");
 			String command = reader.readLine();
-			if (command.equalsIgnoreCase("exit")) {
+			if (command.equalsIgnoreCase("exit")) {	//command(입력값)과 "exit" 값을 비교
 				System.out.println("종료합니다.");
 				break;
 			}
 			if (command.startsWith("new ")) {
-				processNewCommand(command.split(" "));
-				continue;
+				processNewCommand(command.split(" ")); //공백을 기준으로 구분하여 배열생성
+				continue;							//{new, test@test.com, test, 1234, 1234}
 			} else if (command.startsWith("change ")) {
 				processChangeCommand(command.split(" "));
 				continue;
 			}
-			printHelp();
+			printHelp();	//그외 입력값 처리 메서드
 		}
 	}
 
@@ -44,6 +44,7 @@ public class MainForAssembler {
 		}
 		MemberRegisterService regSvc = assembler.getMemberRegisterService();
 		RegisterRequest req = new RegisterRequest();
+		//arg[0]은 "new"가 들어가 있음
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);
 		req.setPassword(arg[3]);
@@ -54,7 +55,7 @@ public class MainForAssembler {
 			return;
 		}
 		try {
-			regSvc.regist(req);
+			regSvc.regist(req); //입력한 데이터 등록 후 id값 받아옴.
 			System.out.println("등록했습니다.\n");
 		} catch (DuplicateMemberException e) {
 			System.out.println("이미 존재하는 이메일입니다.\n");
