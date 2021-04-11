@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import chap05.config.AppCtx;
 import chap05.spring.ChangePasswordService;
@@ -24,7 +25,8 @@ public class MainForSpring {
 	
 	public static void main(String[] args) throws IOException {
 		ctx = new AnnotationConfigApplicationContext(AppCtx.class);
-		
+		//xml을 이용한 스프링컨테이너 이용
+		//ctx = new ClassPathXmlApplicationContext("chap05.config/setting.xml");
 		BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
