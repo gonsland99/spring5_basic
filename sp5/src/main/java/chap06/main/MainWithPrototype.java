@@ -5,8 +5,8 @@ import java.io.IOException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
-import config.AppCtxWithPrototype;
-import spring.Client;
+import chap06.config.AppCtxWithPrototype;
+import chap06.spring.Client;
 
 public class MainWithPrototype {
 

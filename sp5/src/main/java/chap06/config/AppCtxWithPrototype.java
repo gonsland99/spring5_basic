@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import spring.Client;
-import spring.Client2;
+import chap06.spring.Client;
+import chap06.spring.Client2;
 
 @Configuration
 public class AppCtxWithPrototype {
